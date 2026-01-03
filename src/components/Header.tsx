@@ -8,7 +8,6 @@ const Header = () => {
   return (
     <header className="text-center mb-12 px-4">
       <img src={Logo} className="mx-auto w-28 mb-2" />
-      <img src={RealLogo} className="mx-auto w-16 mb-4" />
 
       <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
         Global Real Estate Marketplace
