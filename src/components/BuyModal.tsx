@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import USDCIcon from "../assets/usdc.png";
 import SOLIcon from "../assets/sol.png";
+import realIcon from "../assets/real.png";
 
 interface Props {
   onBuySOL: (amount: string) => void;
@@ -51,21 +52,36 @@ const BuyModal: React.FC<Props> = ({
         />
 
         {/* Buy buttons */}
-        <div className="flex gap-2 mb-4">
+        <div className="flex flex-col gap-2 mb-4">
+          {/* SOL button */}
           <button
             className="flex-1 flex items-center justify-center gap-2 p-3 rounded bg-teal-400 text-black font-bold hover:opacity-90"
             onClick={() => onBuySOL(amount)}
+            title="REAL holders get discounted buy fees & fee rewards from platform fees"
           >
             <img src={SOLIcon} alt="SOL" className="w-5 h-5" />
+            <img src={realIcon} alt="REAL" className="w-4 h-4" />
             Buy with SOL
           </button>
+          <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
+            <img src={realIcon} className="w-4 h-4" alt="REAL" />
+            REAL holders: discounted buy fees & fee rewards
+          </p>
+
+          {/* USDC button */}
           <button
             className="flex-1 flex items-center justify-center gap-2 p-3 rounded bg-blue-500 text-white font-bold hover:bg-blue-600"
             onClick={() => onBuyUSDC(amount)}
+            title="REAL holders get discounted buy fees & fee rewards from platform fees"
           >
             <img src={USDCIcon} alt="USDC" className="w-5 h-5" />
+            <img src={realIcon} alt="REAL" className="w-4 h-4" />
             Buy with USDC
           </button>
+          <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
+            <img src={realIcon} className="w-4 h-4" alt="REAL" />
+            REAL holders: discounted buy fees & fee rewards
+          </p>
         </div>
 
         <button
