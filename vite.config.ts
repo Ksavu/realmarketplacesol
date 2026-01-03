@@ -9,12 +9,16 @@ export default defineConfig({
   build: {
     outDir: 'dist', // gde će build ići
     rollupOptions: {
-      input: path.resolve(__dirname, 'index.html'), // osiguraj da Vite zna gde je index.html
+      input: path.resolve(__dirname, 'index.html'),
+      external: [
+        '@noble/curves',
+        '@noble/hashes',
+      ],
     },
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'), // opcionalno za @ import
+      '@': path.resolve(__dirname, 'src'), // optional @ import
     },
   },
 });
