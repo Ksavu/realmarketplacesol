@@ -100,7 +100,6 @@ const PropertyCard: React.FC<Props> = ({
             title="REAL holders get discounted buy fees & fee rewards from platform fees"
           >
             <img src={usdcIcon} className="w-5 h-5" alt="USDC" />
-            <img src={realIcon} className="w-4 h-4" alt="REAL" />
             {priceUSDC.toLocaleString()} USDC
           </button>
           <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
@@ -117,7 +116,6 @@ const PropertyCard: React.FC<Props> = ({
             title="REAL holders get discounted buy fees & fee rewards from platform fees"
           >
             <img src={solIcon} className="w-5 h-5" alt="SOL" />
-            <img src={realIcon} className="w-4 h-4" alt="REAL" />
             {solPrice > 0 ? solPrice.toFixed(3) : "..."} SOL
           </button>
           <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
