@@ -80,7 +80,6 @@ const BuyModal: React.FC<Props> = ({
             title="REAL holders get discounted buy fees & fee rewards from platform fees"
           >
             <img src={SOLIcon} alt="SOL" className="w-5 h-5" />
-            <img src={realIcon} alt="REAL" className="w-4 h-4" />
             Buy with SOL (~{solAmount.toFixed(3)} SOL)
           </button>
           <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
@@ -95,7 +94,6 @@ const BuyModal: React.FC<Props> = ({
             title="REAL holders get discounted buy fees & fee rewards from platform fees"
           >
             <img src={USDCIcon} alt="USDC" className="w-5 h-5" />
-            <img src={realIcon} alt="REAL" className="w-4 h-4" />
             Buy with USDC ({(parseFloat(amount) * priceUSDC).toLocaleString()} USDC)
           </button>
           <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
