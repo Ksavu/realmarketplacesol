@@ -48,7 +48,7 @@ const PropertyCard: React.FC<Props> = ({
         SystemProgram.transfer({
           fromPubkey: publicKey,
           toPubkey: SELLER_WALLET,
-          lamports: priceSOL * LAMPORTS_PER_SOL,
+          lamports: Math.round(priceSOL * LAMPORTS_PER_SOL),
         })
       );
 
