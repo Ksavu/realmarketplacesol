@@ -24,7 +24,7 @@ interface Props {
 
 // 👇 WALLET KOJI PRIMA NOVAC (seller / escrow)
 const SELLER_WALLET = new PublicKey(
-  "PASTE_SELLER_WALLET_ADDRESS_HERE"
+  "7ALEjJAikbPcRcTRT6722UEa18tHLf5cnz72SABy5NUg"
 );
 
 const PropertyCard: React.FC<Props> = ({
