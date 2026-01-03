@@ -16,10 +16,9 @@ export default defineConfig({
     },
   },
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-      // Force Vite to use CJS entry for semver to avoid ESM resolution issues
-      semver: path.resolve(__dirname, 'node_modules/semver/classes/semver.js'),
-    },
+  alias: {
+    '@': path.resolve(__dirname, 'src'),
   },
+},
+
 });

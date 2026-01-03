@@ -1,4 +1,4 @@
-# Node modules
+# Dependencies
 node_modules/
 
 # Build output
@@ -20,10 +20,8 @@ pnpm-debug.log*
 .DS_Store
 Thumbs.db
 
-# Vite cache
+# Cache
 .vite/
-
-# TypeScript cache
 *.tsbuildinfo
 
 # IDE/editor configs
@@ -34,7 +32,7 @@ Thumbs.db
 *.njsproj
 *.sln
 
-# Optional: if using yarn
+# Yarn
 .yarn/*
 !.yarn/patches
 !.yarn/releases
