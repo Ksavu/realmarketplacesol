@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import USDCIcon from "../assets/usdc.png";
 import SOLIcon from "../assets/sol.png";
 import realIcon from "../assets/real.png";
 
 interface Props {
-  onBuySOL: (amount: string) => void;
+  onBuySOL: (amount: string, solAmount: number) => void;
   onBuyUSDC: (amount: string) => void;
   onClose: () => void;
   maxSupply: number;
   sold: number;
-  price: string;
+  priceUSDC: number; // USDC cena za 1 $REAL
 }
 
 const BuyModal: React.FC<Props> = ({
@@ -18,17 +18,37 @@ const BuyModal: React.FC<Props> = ({
   onClose,
   maxSupply,
   sold,
-  price,
+  priceUSDC,
 }) => {
   const [amount, setAmount] = useState("1");
+  const [solPrice, setSolPrice] = useState<number>(0);
   const percent = Math.min((sold / maxSupply) * 100, 100);
+
+  // Fetch SOL/USD cena
+  useEffect(() => {
+    const fetchSolPrice = async () => {
+      try {
+        const res = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=solana&vs_currencies=usd");
+        const data = await res.json();
+        setSolPrice(data.solana.usd);
+      } catch (err) {
+        console.error("Error fetching SOL price:", err);
+      }
+    };
+    fetchSolPrice();
+  }, []);
+
+  // Izračunavanje koliko SOL treba za dati amount $REAL
+  const solAmount = solPrice ? (parseFloat(amount) * priceUSDC) / solPrice : 0;
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/80 z-50">
       <div className="bg-[#0b0b0b] p-6 rounded-xl max-w-md w-full border border-gray-700 shadow-xl">
         <div className="text-center mb-4">
           <h2 className="text-2xl font-bold mb-2">$REAL Presale</h2>
-          <p className="text-gray-400 text-sm">Price: ${price}</p>
+          <p className="text-gray-400 text-sm">
+            Price: {priceUSDC} USDC (~{solAmount.toFixed(3)} SOL)
+          </p>
         </div>
 
         {/* Progress bar */}
@@ -56,12 +76,12 @@ const BuyModal: React.FC<Props> = ({
           {/* SOL button */}
           <button
             className="flex-1 flex items-center justify-center gap-2 p-3 rounded bg-teal-400 text-black font-bold hover:opacity-90"
-            onClick={() => onBuySOL(amount)}
+            onClick={() => onBuySOL(amount, solAmount)}
             title="REAL holders get discounted buy fees & fee rewards from platform fees"
           >
             <img src={SOLIcon} alt="SOL" className="w-5 h-5" />
             <img src={realIcon} alt="REAL" className="w-4 h-4" />
-            Buy with SOL
+            Buy with SOL (~{solAmount.toFixed(3)} SOL)
           </button>
           <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
             <img src={realIcon} className="w-4 h-4" alt="REAL" />
@@ -76,7 +96,7 @@ const BuyModal: React.FC<Props> = ({
           >
             <img src={USDCIcon} alt="USDC" className="w-5 h-5" />
             <img src={realIcon} alt="REAL" className="w-4 h-4" />
-            Buy with USDC
+            Buy with USDC ({(parseFloat(amount) * priceUSDC).toLocaleString()} USDC)
           </button>
           <p className="text-xs text-gray-400 text-center flex items-center justify-center gap-1">
             <img src={realIcon} className="w-4 h-4" alt="REAL" />
