@@ -1,13 +1,12 @@
-// vite.config.ts
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
-  root: './', // root folder gde je index.html
+  root: './',
   build: {
-    outDir: 'dist', // gde će build ići
+    outDir: 'dist',
     rollupOptions: {
       input: path.resolve(__dirname, 'index.html'),
       external: [
@@ -18,7 +17,9 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'), // optional @ import
+      '@': path.resolve(__dirname, 'src'),
+      // Force Vite to use CJS entry for semver to avoid ESM resolution issues
+      semver: path.resolve(__dirname, 'node_modules/semver/classes/semver.js'),
     },
   },
 });
