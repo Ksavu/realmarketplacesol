@@ -1,24 +1,27 @@
+import miamiImg from "./assets/miami-house.jpg";
+import romeImg from "./assets/rome-apartment.jpg";
+import dubaiImg from "./assets/dubai-apartment.jpg";
 import React from "react";
 import Header from "./components/Header";
 import PropertyCard from "./components/PropertyCard";
 
 const properties = [
   {
-    image: "https://source.unsplash.com/400x300/?rome,apartment",
+    image: romeImg,
     title: "Rome Apartment",
     location: "Rome, Italy",
     priceUSDC: 350_000,
     priceSOL: 8,
   },
   {
-    image: "https://source.unsplash.com/400x300/?miami,house",
+    image: miamiImg,
     title: "Miami House",
     location: "Miami, FL",
     priceUSDC: 1_200_000,
     priceSOL: 28,
   },
   {
-    image: "https://source.unsplash.com/400x300/?dubai,apartment",
+    image: dubaiImg,
     title: "Dubai Apartment",
     location: "Dubai, UAE",
     priceUSDC: 900_000,
