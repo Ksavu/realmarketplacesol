@@ -32,7 +32,7 @@ const Footer = () => {
 
           {/* Telegram */}
           <a
-            href="https://t.me/YourTelegramLink"
+            href="https://t.me/realcoinmarketplacesol"
             target="_blank"
             rel="noopener noreferrer"
             className="relative p-3 rounded-full bg-[#0088cc] text-white
