@@ -15,31 +15,32 @@ const Footer = () => {
           </span>
         </div>
 
-        {/* Social links with gradient + blur effect */}
+        {/* Social links */}
         <div className="flex gap-4 text-xl">
+          {/* X */}
           <a
             href="https://x.com/YourXLink"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative p-3 rounded-full bg-gradient-to-tr from-red-400 to-red-600 text-white
-                       hover:scale-110 transition-transform duration-300"
+            className="relative p-3 rounded-full bg-black text-white
+                       hover:bg-gray-800 transition-colors duration-300"
             aria-label="X"
           >
-            <SiX className="relative z-10" />
-            {/* Glow effect */}
-            <span className="absolute inset-0 rounded-full bg-red-500 blur-xl opacity-30"></span>
+            <SiX className="relative z-10 w-5 h-5" />
+            <span className="absolute inset-0 rounded-full bg-white/20 blur-xl opacity-20"></span>
           </a>
 
+          {/* Telegram */}
           <a
             href="https://t.me/YourTelegramLink"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative p-3 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 text-white
-                       hover:scale-110 transition-transform duration-300"
+            className="relative p-3 rounded-full bg-[#0088cc] text-white
+                       hover:bg-[#007ab8] transition-colors duration-300"
             aria-label="Telegram"
           >
-            <FaTelegramPlane className="relative z-10" />
-            <span className="absolute inset-0 rounded-full bg-purple-500 blur-xl opacity-30"></span>
+            <FaTelegramPlane className="relative z-10 w-5 h-5" />
+            <span className="absolute inset-0 rounded-full bg-[#00aaff]/30 blur-xl opacity-30"></span>
           </a>
         </div>
       </div>
