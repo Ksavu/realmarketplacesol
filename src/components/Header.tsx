@@ -22,7 +22,8 @@ const Header = () => {
         </h1>
 
         <p className="text-gray-300 text-sm md:text-lg mb-8">
-          Buy and sell real estate using <strong>USDC</strong> or <strong>SOL</strong>
+          Buy and sell real estate using <strong>USDC</strong> or{" "}
+          <strong>SOL</strong>
         </p>
 
         {/* Buttons */}
@@ -42,15 +43,37 @@ const Header = () => {
 
         {/* REAL Holder Benefits */}
         <div className="flex flex-col md:flex-row justify-center gap-4 text-white text-sm md:text-base">
-          <div className="flex items-center gap-2 bg-gray-900/60 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-700">
+          
+          {/* Discounted fees + free listings */}
+          <div className="relative group flex items-center gap-2 bg-gray-900/60 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-700 cursor-default">
             <FaDollarSign className="text-yellow-400" />
             Discounted marketplace fees for $REAL holders
+
+            {/* Tooltip */}
+            <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2
+              w-72 text-xs text-gray-200 bg-black/90 border border-gray-700
+              rounded-lg px-4 py-3 opacity-0 group-hover:opacity-100
+              transition-opacity duration-300 pointer-events-none">
+              Hold $REAL to unlock lower fees and free property listings — based
+              on your balance.
+            </div>
           </div>
 
-          <div className="flex items-center gap-2 bg-gray-900/60 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-700">
+          {/* Staking rewards */}
+          <div className="relative group flex items-center gap-2 bg-gray-900/60 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-700 cursor-default">
             <FaCoins className="text-green-400" />
             Stake $REAL and earn 30% of platform profits
+
+            {/* Tooltip */}
+            <div className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2
+              w-72 text-xs text-gray-200 bg-black/90 border border-gray-700
+              rounded-lg px-4 py-3 opacity-0 group-hover:opacity-100
+              transition-opacity duration-300 pointer-events-none">
+              $REAL stakers receive 30% of marketplace revenue — distributed
+              proportionally to the amount staked.
+            </div>
           </div>
+
         </div>
       </div>
     </header>
