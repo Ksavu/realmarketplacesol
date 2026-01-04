@@ -31,7 +31,7 @@ const Header = () => {
           <WalletMultiButton />
 
           <a
-            href="/REAL_Whitepaper.pdf"
+            href="/Real_Whitepaper.pdf"
             download
             className="inline-flex items-center justify-center gap-2 px-6 py-3
               rounded-xl border border-gray-500 text-white
