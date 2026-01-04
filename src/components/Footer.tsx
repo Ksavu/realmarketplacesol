@@ -1,47 +1,43 @@
 import React from "react";
-import Logo from "../assets/logo.png";
-import { FaTwitter, FaTelegramPlane } from "react-icons/fa";
+import { FaTelegramPlane } from "react-icons/fa";
+import { SiX } from "react-icons/si"; // X (bivši Twitter)
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-10 mt-16 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-        {/* Logo */}
-        <div className="flex items-center gap-2">
-          <img src={Logo} alt="Logo" className="w-20" />
-          <span className="text-sm md:text-base text-gray-400">
-            &copy; {new Date().getFullYear()} Real Marketplace
-          </span>
+    <footer className="bg-gray-900/80 backdrop-blur-md border-t border-gray-700 py-6 mt-12">
+      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+        {/* Logo / text */}
+        <div className="text-white font-bold text-lg">
+          Real Marketplace
         </div>
 
-        {/* Social links with gradient + blur effect */}
-        <div className="flex gap-4 text-xl">
+        {/* Social links */}
+        <div className="flex gap-6 text-white text-xl">
           <a
-            href="https://twitter.com/yourtwitter"
+            href="https://t.me/YourTelegramLink"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative p-3 rounded-full bg-gradient-to-tr from-blue-400 to-blue-600 text-white
-                       hover:scale-110 transition-transform duration-300"
-            aria-label="Twitter"
+            className="hover:text-blue-400 transition"
+            title="Telegram"
           >
-            <FaTwitter className="relative z-10" />
-            {/* Glow effect */}
-            <span className="absolute inset-0 rounded-full bg-blue-500 blur-xl opacity-30"></span>
+            <FaTelegramPlane />
           </a>
 
           <a
-            href="https://t.me/yourtelegram"
+            href="https://x.com/YourXLink"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative p-3 rounded-full bg-gradient-to-tr from-purple-400 to-purple-600 text-white
-                       hover:scale-110 transition-transform duration-300"
-            aria-label="Telegram"
+            className="hover:text-red-500 transition"
+            title="X"
           >
-            <FaTelegramPlane className="relative z-10" />
-            <span className="absolute inset-0 rounded-full bg-purple-500 blur-xl opacity-30"></span>
+            <SiX />
           </a>
         </div>
       </div>
+
+      <p className="text-gray-400 text-sm text-center mt-4">
+        &copy; {new Date().getFullYear()} Real Marketplace. All rights reserved.
+      </p>
     </footer>
   );
 };
