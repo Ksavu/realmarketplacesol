@@ -22,8 +22,7 @@ const Header = () => {
         </h1>
 
         <p className="text-gray-300 text-sm md:text-lg mb-8">
-          Buy and sell real estate using <strong>USDC</strong> or{" "}
-          <strong>SOL</strong>
+          Buy and sell real estate using <strong>USDC</strong> or <strong>SOL</strong>
         </p>
 
         {/* Buttons */}
