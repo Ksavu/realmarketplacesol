@@ -10,32 +10,46 @@ const Header = () => {
       className="relative mb-16 px-4 py-16 text-center bg-cover bg-center"
       style={{ backgroundImage: `url(${HeroBg})` }}
     >
-      {/* overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/70"></div>
 
-      {/* content */}
+      {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto">
-        <img src={Logo} className="mx-auto w-28 mb-4" />
+        <img src={Logo} className="mx-auto w-28 mb-4" alt="Logo" />
 
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-3">
           Global Real Estate Marketplace
         </h1>
 
         <p className="text-gray-300 text-sm md:text-lg mb-8">
-          Buy and sell real estate using <strong>USDC</strong> or <strong>SOL</strong>
+          Buy and sell real estate using <strong>USDC</strong> or{" "}
+          <strong>SOL</strong>
         </p>
 
-        <div className="flex justify-center mb-8">
+        {/* Buttons */}
+        <div className="flex flex-col items-center gap-4 mb-8">
           <WalletMultiButton />
+
+          <a
+            href="/REAL_Whitepaper.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3
+              rounded-xl border border-gray-500 text-white
+              hover:bg-white hover:text-black transition"
+          >
+            📄 Whitepaper
+          </a>
         </div>
 
-        {/* REAL benefits */}
+        {/* REAL Holder Benefits */}
         <div className="flex flex-col md:flex-row justify-center gap-4 text-white text-sm md:text-base">
-          <div className="flex items-center gap-2 bg-gray-900/80 px-4 py-2 rounded-xl border border-gray-700">
+          <div className="flex items-center gap-2 bg-gray-900/60 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-700">
             <FaDollarSign className="text-yellow-400" />
             Discounted marketplace fees for $REAL holders
           </div>
-          <div className="flex items-center gap-2 bg-gray-900/80 px-4 py-2 rounded-xl border border-gray-700">
+
+          <div className="flex items-center gap-2 bg-gray-900/60 backdrop-blur-md px-4 py-2 rounded-xl border border-gray-700">
             <FaCoins className="text-green-400" />
             Stake $REAL and earn 30% of platform profits
           </div>
