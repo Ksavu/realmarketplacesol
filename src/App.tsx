@@ -4,6 +4,7 @@ import dubaiImg from "./assets/dubai-apartment.jpg";
 import React from "react";
 import Header from "./components/Header";
 import PropertyCard from "./components/PropertyCard";
+import Footer from "./components/Footer"; // ⬅️ dodali footer
 
 const properties = [
   {
@@ -31,10 +32,10 @@ const properties = [
 
 function App() {
   return (
-    <div className="min-h-screen bg-black text-white px-4">
+    <div className="min-h-screen bg-black text-white px-4 flex flex-col">
       <Header />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <main className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
         {properties.map((p, idx) => (
           <PropertyCard
             key={idx}
@@ -45,7 +46,9 @@ function App() {
             priceSOL={p.priceSOL}
           />
         ))}
-      </div>
+      </main>
+
+      <Footer /> {/* ⬅️ Footer pozvan */}
     </div>
   );
 }
